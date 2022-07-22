@@ -4,14 +4,14 @@ import {
   validateCreateUser,
   validateLogin,
 } from "../middlewares/user.middleware.js";
-import { createUser, login } from "./../controllers/user.controller.js";
+import { createUser, login } from "../controllers/auth.controller.js";
 
 const router = Router();
 
 // Login
-router.post("/auth/login", validateLogin, login);
+router.post("/login", validateLogin, login);
 
 // Register route
-router.post("/auth/register", validateCreateUser, createUser);
+router.post("/register", validateCreateUser, createUser);
 
 export default router;

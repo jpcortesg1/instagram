@@ -1,7 +1,7 @@
 // Required modules
 import express from "express";
-import db from "./database/index.js"
-import authRoutes from "./routes/auth.routes.js";
+import _ from "./database/index.js";
+import routes from "./routes/index.routes.js";
 import { PORT } from "./config.js";
 
 // Create app
@@ -15,6 +15,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Endpoints
-app.use(authRoutes);
+app.use("/api/v1", routes);
 
 export default app;
